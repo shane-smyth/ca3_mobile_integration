@@ -23,8 +23,11 @@ fun ClassesScreen() {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Text("My Classes", Modifier.size(100.dp))
             Spacer(Modifier.height(16.dp))
-            LazyVerticalGrid(columns = GridCells.Fixed(2)){
-                items(allClasses) {
+            LazyVerticalGrid(
+                columns = GridCells.Fixed(2),
+                modifier = Modifier.fillMaxHeight(0.8f)
+            ){
+                items(10) {
                     ClassCard()
                 }
             }
@@ -36,10 +39,20 @@ fun ClassesScreen() {
 fun ClassCard(){
     Box(Modifier.fillMaxSize()){
         Column {
+            /*
             Image(
                 painter = painterResource(id = R.drawable.class_image),
                 contentDescription = null,
             )
+
+             */
+            Text("Class Name")
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween){
+                Text("Class ID")
+                Text("Class Teacher")
+            }
+
+
         }
     }
 }

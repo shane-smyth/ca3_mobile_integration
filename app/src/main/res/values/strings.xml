@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ca3</string>
+    <string name="class_times">Class Times:</string>
+    <string name="attendance_summary">Attendance Summary</string>
+    <string name="total">Classes to Date</string>
+    <string name="present">Present</string>
+    <string name="late">Late</string>
+    <string name="absent">Absent</string>
+    <string name="view_attendance">View Attendance Records</string>
+
 </resources>
