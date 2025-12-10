@@ -9,4 +9,7 @@ sealed class Screen(val route: String, val label: String, val icon: ImageVector)
     object Attendance : Screen("attendance", "Attendance", Icons.Filled.EventAvailable)
     object Classes : Screen("classes", "Classes", Icons.Filled.School)
     object Profile : Screen("profile", "Profile", Icons.Filled.Person)
+    object ClassInfoScreen: Screen("class_info", "Class Info")
+
 }
+
