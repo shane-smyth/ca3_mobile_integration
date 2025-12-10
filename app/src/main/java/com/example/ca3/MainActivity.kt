@@ -42,8 +42,9 @@ fun AppNavigation() {
         ) {
             composable(Screen.Home.route) { HomeScreen() }
             composable(Screen.Attendance.route) { AttendanceScreen() }
-            composable(Screen.Classes.route) { ClassesScreen() }
+            composable(Screen.Classes.route) { ClassesScreen(navController) }
             composable(Screen.Profile.route) { ProfileScreen() }
+            composable(Screen.ClassInfoScreen.route) { ClassInfoScreen(navController) }
         }
     }
 }

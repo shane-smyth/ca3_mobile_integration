@@ -24,10 +24,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
+import com.example.ca3.ui.navigation.Screen
+import androidx.navigation.NavController
+
 
 
 @Composable
-fun ClassesScreen() {
+fun ClassesScreen(navController: NavController) {
     val allClasses = mutableListOf(
         SubjectClass(
             className = "Math",
@@ -97,6 +100,11 @@ fun ClassesScreen() {
         )
     )
 
+    val navTo = {screen: Screen -> navController.navigate(screen.route) {
+        popUpTo(Screen.Home.route)
+        launchSingleTop = true
+    }}
+
     Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Text("My Classes", fontSize=32.sp)
@@ -107,7 +115,7 @@ fun ClassesScreen() {
                     .padding(8.dp)
             ){
                 items(allClasses) { subjectClass ->
-                    ClassCard(subjectClass)
+                    ClassCard(subjectClass, navTo=navTo)
                 }
             }
         }
@@ -115,11 +123,14 @@ fun ClassesScreen() {
 }
 
 @Composable
-fun ClassCard(subjectClass: SubjectClass, modifier: Modifier = Modifier){
+fun ClassCard(subjectClass: SubjectClass, navTo: (Screen) -> Unit,  modifier: Modifier = Modifier){
     Card(
         colors = CardDefaults.cardColors(
             containerColor = Color(0xFFEFEFEF) // your background color
         ),
+        onClick = {
+            navTo(Screen.ClassInfoScreen)
+        },
         modifier = modifier.padding(8.dp)
 
     ){
@@ -150,10 +161,13 @@ fun ClassCard(subjectClass: SubjectClass, modifier: Modifier = Modifier){
     }
 }
 
+/*
 @Composable
 @Preview
 fun ClassesScreenPreview(){
-    ClassesScreen()
+    ClassesScreen(NavController)
 }
+
+ */
 
 
