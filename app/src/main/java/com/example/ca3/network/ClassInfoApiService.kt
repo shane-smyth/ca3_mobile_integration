@@ -6,6 +6,7 @@ import kotlinx.serialization.json.Json
 import retrofit2.Retrofit
 import retrofit2.http.GET
 
+/*
 private const val BASE_URL = ""
 private val json = Json { ignoreUnknownKeys = true }
 
@@ -26,3 +27,6 @@ object ClassInfoApi {
         retrofit.create(ClassInfoApiService::class.java)
     }
 }
+
+
+ */
