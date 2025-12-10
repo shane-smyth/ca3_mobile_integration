@@ -42,7 +42,7 @@ fun AppNavigation() {
             modifier = Modifier.padding(innerPadding)
         ) {
             composable(Screen.Home.route) { HomeScreen(navController) }
-            composable(Screen.Attendance.route) { AttendanceScreen() }
+            composable(Screen.Attendance.route) { AttendanceScreen(navController) }
             composable(Screen.Classes.route) { ClassesScreen(navController) }
             composable(Screen.Profile.route) { ProfileScreen() }
             composable(Screen.ClassInfoScreen.route) { ClassInfoScreen(navController) }
