@@ -12,6 +12,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.ca3.ui.*
+import com.example.ca3.ui.home.HomeScreen
 import com.example.ca3.ui.navigation.BottomNavBar
 import com.example.ca3.ui.navigation.Screen
 import com.example.ca3.ui.theme.Ca3Theme
