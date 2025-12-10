@@ -1,5 +1,6 @@
 package com.example.ca3.ui.home
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -25,11 +26,13 @@ fun DashboardCard(
     description: String,
     imageUrl: String,
     height: Dp,
+    onClick: () -> Unit
 ) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .height(height),
+            .height(height)
+            .clickable { onClick() },
         shape = RoundedCornerShape(20.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 6.dp),
     ) {

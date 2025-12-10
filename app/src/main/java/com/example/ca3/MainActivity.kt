@@ -41,7 +41,7 @@ fun AppNavigation() {
             startDestination = Screen.Home.route,
             modifier = Modifier.padding(innerPadding)
         ) {
-            composable(Screen.Home.route) { HomeScreen() }
+            composable(Screen.Home.route) { HomeScreen(navController) }
             composable(Screen.Attendance.route) { AttendanceScreen() }
             composable(Screen.Classes.route) { ClassesScreen() }
             composable(Screen.Profile.route) { ProfileScreen() }
