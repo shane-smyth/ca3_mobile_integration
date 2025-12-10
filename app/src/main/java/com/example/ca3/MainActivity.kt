@@ -12,6 +12,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.ca3.ui.*
+import com.example.ca3.ui.home.HomeScreen
 import com.example.ca3.ui.navigation.BottomNavBar
 import com.example.ca3.ui.navigation.Screen
 import com.example.ca3.ui.theme.Ca3Theme
@@ -40,7 +41,7 @@ fun AppNavigation() {
             startDestination = Screen.Home.route,
             modifier = Modifier.padding(innerPadding)
         ) {
-            composable(Screen.Home.route) { HomeScreen() }
+            composable(Screen.Home.route) { HomeScreen(navController) }
             composable(Screen.Attendance.route) { AttendanceScreen() }
             composable(Screen.Classes.route) { ClassesScreen() }
             composable(Screen.Profile.route) { ProfileScreen() }
