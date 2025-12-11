@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ca3</string>
+    <string name="app_name">EduSense</string>
     <string name="class_times">Class Times:</string>
     <string name="attendance_summary">Attendance Summary</string>
     <string name="total">Classes to Date</string>

@@ -1,6 +1,7 @@
 package com.example.ca3.ui
 
 import androidx.compose.foundation.layout.*
+import android.util.Log
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -26,7 +27,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 import com.example.ca3.ui.navigation.Screen
 import androidx.navigation.NavController
-
+import com.example.ca3.ui.viewModels.ClassScreenUiState
+import com.example.ca3.ui.viewModels.ClassScreenViewModel
 
 
 @Composable
@@ -100,6 +102,8 @@ fun ClassesScreen(navController: NavController) {
         )
     )
 
+    //val state = viewModel.classScreenUiState
+
     val navTo = {screen: Screen -> navController.navigate(screen.route) {
         popUpTo(Screen.Home.route)
         launchSingleTop = true
@@ -109,6 +113,30 @@ fun ClassesScreen(navController: NavController) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Text("My Classes", fontSize=32.sp)
             Spacer(Modifier.height(16.dp))
+
+
+            /*
+            when (state) {
+                is ClassScreenUiState.Success -> {
+                    LazyVerticalGrid(
+                        columns = GridCells.Fixed(2),
+                        modifier = Modifier.fillMaxHeight(0.8f)
+                            .padding(8.dp)
+                    ){
+                        items(state.classes) { subjectClass ->
+                            ClassCard(subjectClass, navTo=navTo)
+                        }
+                    }
+                }
+                is ClassScreenUiState.Loading -> {
+                    Text("Loading...")
+                }
+                is ClassScreenUiState.Error -> {
+                    Text("Error loading classes")
+                }
+            }
+
+             */
             LazyVerticalGrid(
                 columns = GridCells.Fixed(2),
                 modifier = Modifier.fillMaxHeight(0.8f)
@@ -118,6 +146,7 @@ fun ClassesScreen(navController: NavController) {
                     ClassCard(subjectClass, navTo=navTo)
                 }
             }
+
         }
     }
 }
